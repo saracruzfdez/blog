@@ -5,6 +5,11 @@
 
     <?php
 
+const BASE_PATH = '/exos/';
+
+require_once "./navbar.php";
+
+
     if (!empty($_POST)) {
 
         if ((isset($_GET['action']) && $_GET['action']) == "register") { // Condition de traitement de la connexion grace à $_GET['register'] :
@@ -95,13 +100,11 @@
     ?>
 
     <!-- Formulaire : -->
-    <div class="container">
+    <div class="container pt-5">
 
-        <div class="row justify-content-center">
+    <div class="w-50 mx-auto col-12 col-sm-10 col-md-8 col-lg-6 border text-bg-light p-3">
 
             <div class="w-50 mx-auto"><?= $error['pseudo_existant'] ?? ' ' ?></div>
-
-            <div class="col-12 col-lg-6 border text-bg-dark p-3">
 
                 <?php if (!empty($_GET) && isset($_GET['action']) && $_GET['action'] == 'register') : ?>
 

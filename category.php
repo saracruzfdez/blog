@@ -1,6 +1,16 @@
 <?php require_once "./head.php";
 require_once "config/function.php"; ?>
 
+
+<body>
+
+<?php
+
+const BASE_PATH = '/exos/';
+
+require_once "./navbar.php" ?>
+
+
 <!-- Condition, soumission du form et insertion en bdd : -->
 <?php
 
@@ -93,10 +103,7 @@ if (!empty($_GET) && isset($_GET['id']) && isset($_GET['action']) && $_GET['acti
 
 
 
-
-<body>
-
-    <div class="container">
+<div class="container pt-5">
         <div class="w-50 mx-auto col-12 col-sm-10 col-md-8 col-lg-6 border text-bg-light p-3">
 
             <h4>Gestion categories</h4>
@@ -171,6 +178,9 @@ if (!empty($_GET) && isset($_GET['id']) && isset($_GET['action']) && $_GET['acti
 
     } // fin if $categories->rowCount()
     ?>
+
+    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 
 </body>
 

@@ -1,8 +1,14 @@
 <?php require_once "./head.php";
 require_once "config/function.php"; ?>
 
+
 <body>
 
+<?php
+
+const BASE_PATH = '/exos/';
+
+require_once "./navbar.php" ?>
 
 
     <?php
@@ -54,7 +60,8 @@ require_once "config/function.php"; ?>
 
 
 
-    <div class="container">
+<div class="container pt-5">
+
         <div class="w-50 mx-auto col-12 col-sm-10 col-md-8 col-lg-6 border text-bg-light p-3">
 
             <h4>New topic</h4>
@@ -89,6 +96,8 @@ require_once "config/function.php"; ?>
         </div>
     </div>
 
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
 
 </html>

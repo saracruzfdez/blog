@@ -8,40 +8,9 @@
 
     ?>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
+<?php require_once "./navbar.php" ?>
 
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current='page' href="<?= BASE_PATH . "category.php?"; ?>">GESTION CATEGORIES</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= BASE_PATH . "authentication.php?action=register"; ?>">INSCRIPTION</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= BASE_PATH . "authentication.php?action=login"; ?>">CONNEXION</a>
-                    </li>
-                    
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= BASE_PATH . "topic.php"; ?>">NEW TOPIC</a>
-                    </li>
-                  
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= BASE_PATH . "topics.php"; ?>">ALL TOPICS</a>
-                    </li>
-
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <?php var_dump($_SESSION['user']); ?>
 
     <h2>Mise en place du projet forum</h2>
     <p>Notre client souhaite la création ,par notre équipe, de son forum devTech le montage de sa base de donnée. Il nous explique qu'il a besoin d'une simple authentification par Pseudo. Que ses utilisateur peuvent créer un topic en liens avec plusieurs catégories que nous qualifiront de tag. Une fois le topic créé, il souhaite que tout utilisateur puisse y participer</p>

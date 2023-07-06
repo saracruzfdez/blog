@@ -3,6 +3,13 @@ require_once "config/function.php"; ?>
 
 <body>
 
+<?php
+
+const BASE_PATH = '/exos/';
+
+require_once "./navbar.php" ?>
+
+
     <?php
 
     // Select
@@ -36,17 +43,17 @@ require_once "config/function.php"; ?>
                     <tr>
                         <!-- <td><?= $topic['id'] ?></td> -->
                         <td>
-                            <a class="btn btn-primary" href="<?="topicMessage.php?id=".$topic['id']?>"><?= $topic['title'] ?>
+                            <a class="btn btn-primary" href="<?= "topicMessage.php?id=" . $topic['id'] ?>"><?= $topic['title'] ?>
                             </a>
                         </td>
 
-                        <?php foreach ($categories as $category) { ?>
-
-                            <td>
-                                <?= $category['title'] ?>
-                            </td>
-
-                        <?php } ?>
+                        <td>
+                            <?php foreach ($categories as $category) { ?>
+                                <button type="button" class="btn btn-info">
+                                    <?= $category['title'] ?>
+                                </button>
+                            <?php } ?>
+                        </td>
 
                     </tr>
 
@@ -64,6 +71,7 @@ require_once "config/function.php"; ?>
 
 
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 
 </body>
 
