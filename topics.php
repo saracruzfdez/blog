@@ -27,7 +27,7 @@ require_once "./navbar.php" ?>
             <thead>
                 <tr>
                     <!-- <th scope="col">ID</th> -->
-                    <th scope="col">TOPIC</th>
+                    <th scope="col">TOPICS</th>
                     <th scope="col">CATEGORIES</th>
                 </tr>
             </thead>

@@ -19,21 +19,19 @@ if (!empty($_POST)) {
     //  var_dump($_POST);
 
     $errorCategory = array();
-
+    
     if (empty($_POST['title'])) {
-
+        
         $errorCategory['title'] = 'Title obligatoire';
     };
-
+    
     if (empty($errorCategory)) {
-
-
+        
         // Veriefie si je suis en update ou en insertion avec $get id vide ou rempli :
         if (empty($_GET['id'])) {
-
+            
             // Vérifie si la cat est existante en bdd :
-            $result = execute("SELECT * FROM category WHERE title=:title", array(':title' => $_POST['title']));
-
+                $result = execute("SELECT * FROM category WHERE title=:title", array(':title' => $_POST['title']));
             // var_dump($result->rowCount());
 
             if ($result->rowCount() == 0) {
@@ -43,12 +41,13 @@ if (!empty($_POST)) {
                     ':title' => $_POST['title']
 
                 ));
+
             } else {
 
                 $errorCategory['title_existant'] = "Categorie existante";
             }
-        } else {
 
+        } else {
 
             execute("UPDATE category SET title=:title WHERE id=:id", array(
 
@@ -56,9 +55,14 @@ if (!empty($_POST)) {
                 ':title' => $_POST['title']
 
             ));
+
+            header('Location: category.php');
+            exit;
+
         } // Fin vérification si je suis en update ou en insertion
 
     }  // Fin vérification $errorCategory
+
 
 } // Fin vérification !empty $_POST
 
@@ -93,6 +97,8 @@ if (!empty($_GET) && isset($_GET['id']) && isset($_GET['action']) && $_GET['acti
 
     // var_dump($succes);
 
+    header('Location: category.php');
+    exit;
 
 };
 

@@ -37,9 +37,11 @@ require_once "./navbar.php" ?>
         if (count($topicError) == 0) {
 
             // ici on  insere le nouveau topic dans topic et recupére la dernière insertion que l'on va faire dans topic :
-            $lastInsert = execute("INSERT INTO topic (title) VALUES (:title)", array(
+            $lastInsert = execute("INSERT INTO topic (title, id_user) VALUES (:title, :id_user)", array(
 
-                ':title' => $_POST['title']
+                ':title' => $_POST['title'],
+                ':id_user' => $_SESSION['user']['id']
+
 
             ), 'lll');
 
@@ -56,6 +58,10 @@ require_once "./navbar.php" ?>
                 ));
             }
         };
+
+        header('Location: topics.php');
+        exit;
+
     } ?>
 
 
